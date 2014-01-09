@@ -1,0 +1,8 @@
+useDynLib(IsingSampler)
+export(IsingSampler)
+export(IsingSumLikelihood)
+export(IsingLikelihood)
+export(IsingStateProb)
+import(plyr)
+import(Rcpp)
+export(LinTransform)
