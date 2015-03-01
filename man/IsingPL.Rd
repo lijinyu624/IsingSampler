@@ -1,17 +1,20 @@
-\name{IsingSumLikelihood}
-\alias{IsingSumLikelihood}
+\name{IsingPL}
+\alias{IsingPL}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Likelihood of sumscores from tractible Ising model.
+Pseudo-likelihood
 }
 \description{
-This function returns the likelihood of all possible sumscores. Is only tractible up to rougly 10 nodes.
+Computes the pseudolikelihood of a dataset given an Ising Model.
 }
 \usage{
-IsingSumLikelihood(graph, thresholds, beta, responses = c(0L, 1L))
+IsingPL(x, graph, thresholds, beta, responses = c(0L, 1L))
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
+  \item{x}{
+A binary dataset
+}
   \item{graph}{
 Square matrix indicating the weights of the network. Must be symmetrical with 0 as diagonal.
 }
@@ -26,6 +29,9 @@ Response options. Typically set to \code{c(-1L, 1L)} or \code{c(0L, 1L)} (defaul
 }
 }
 
+\value{
+The pseudolikelihood
+}
 \author{
 Sacha Epskamp (mail@sachaepskamp.com)
 }

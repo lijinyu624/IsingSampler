@@ -5,8 +5,8 @@ IsingProcess <- function(nSample, graph, thresholds, beta, responses) {
     .Call('IsingSampler_IsingProcess', PACKAGE = 'IsingSampler', nSample, graph, thresholds, beta, responses)
 }
 
-IsingSamplerCpp <- function(n, graph, thresholds, beta, nIter, responses, exact) {
-    .Call('IsingSampler_IsingSamplerCpp', PACKAGE = 'IsingSampler', n, graph, thresholds, beta, nIter, responses, exact)
+IsingSamplerCpp <- function(n, graph, thresholds, beta, nIter, responses, exact, constrain) {
+    .Call('IsingSampler_IsingSamplerCpp', PACKAGE = 'IsingSampler', n, graph, thresholds, beta, nIter, responses, exact, constrain)
 }
 
 H <- function(J, s, h) {
@@ -21,7 +21,23 @@ Hvec <- function(s, Theta, N) {
     .Call('IsingSampler_Hvec', PACKAGE = 'IsingSampler', s, Theta, N)
 }
 
-ExchangeAlgo <- function(Y, lowerBound, upperBound, stepSize, nIter, responses, simAn, tempStart, tempEnd, StartValues) {
-    .Call('IsingSampler_ExchangeAlgo', PACKAGE = 'IsingSampler', Y, lowerBound, upperBound, stepSize, nIter, responses, simAn, tempStart, tempEnd, StartValues)
+expvalues <- function(x) {
+    .Call('IsingSampler_expvalues', PACKAGE = 'IsingSampler', x)
+}
+
+vec2Thresh <- function(vec, P) {
+    .Call('IsingSampler_vec2Thresh', PACKAGE = 'IsingSampler', vec, P)
+}
+
+vec2Graph <- function(vec, P) {
+    .Call('IsingSampler_vec2Graph', PACKAGE = 'IsingSampler', vec, P)
+}
+
+Broderick2013 <- function(x, M, T, nIter, responses) {
+    .Call('IsingSampler_Broderick2013', PACKAGE = 'IsingSampler', x, M, T, nIter, responses)
+}
+
+PseudoLikelihood <- function(x, graph, thresholds, beta, responses, logis) {
+    .Call('IsingSampler_PseudoLikelihood', PACKAGE = 'IsingSampler', x, graph, thresholds, beta, responses, logis)
 }
 
