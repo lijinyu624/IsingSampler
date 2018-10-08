@@ -304,7 +304,7 @@ double H(NumericMatrix J, IntegerVector s, NumericVector h)
   for (int i=0;i<N;i++)
   {
     Res -= h[i] * s[i];
-    for (int j=i;j<N;j++)
+    for (int j=0;j<N;j++)
     {
       if (j!=i) Res -= J(i,j) * s[i] * s[j];
     }
